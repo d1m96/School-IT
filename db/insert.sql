@@ -1,4 +1,4 @@
-﻿insert into equip_classes (id_name) values ('Сombine-harvester');
+﻿insert into equip_classes (id_name) values ('Combine-harvester');
 
 
 insert into equips (model_class_id, id_name) values (1, 'Combine-harvester 1');
