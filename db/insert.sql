@@ -1,9 +1,9 @@
-insert into equip_classes (id_name) values ('Сombine-harvester');
+﻿insert into equip_classes (id_name) values ('Сombine-harvester');
 
 
-insert into equips (model_class_id, id_name) values (1, 'Сombine-harvester №1');
-insert into equips (model_class_id, id_name) values (1, 'Сombine-harvester №2');
-insert into equips (model_class_id, id_name) values (1, 'Сombine-harvester №3');
+insert into equips (model_class_id, id_name) values (1, 'Combine-harvester 1');
+insert into equips (model_class_id, id_name) values (1, 'Combine-harvester 2');
+insert into equips (model_class_id, id_name) values (1, 'Combine-harvester 3');
 
 
 insert into requirement_classes (id_name, target_model_class_id, target_model_id) values ('Target performance', 1, 1);

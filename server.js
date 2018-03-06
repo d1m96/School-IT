@@ -1,11 +1,11 @@
 
-var pgp = require("pg-promise")(/*options*/);
-var db = pgp("postgres://client:qwerty@localhost:5432/project");
+var pgp = require("pg-promise")();
+var db = pgp("postgres://client@localhost:5432/project");
 var http = require("http");
 
 http.createServer( function(request, response) {
     response.writeHead(200, {"Content-Type": "text/plain"});
-    db.one("SELECT * from users")
+    db.many("SELECT id_name FROM equips")
         .then(function (data) {
             //response.write(data);
             console.log(JSON.stringify(data));
