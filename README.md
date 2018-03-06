@@ -20,7 +20,7 @@ _**НАСТРОЙКА СЕРВЕРА**_
 **`~\School-IT> npm install nodejs -g`** <br>
 **`~\School-IT> npm install http --save`** <br>
 **`~\School-IT> npm install pg-promise --save`** <br>
-**`~\School-IT> ...`** <br>
+**`~\School-IT> npm install json --save`** <br>
 4) В том же окне вводите: <br>
 **`~\School-IT> node server.js`** <br>
 после откройте браузер и введите в адресной строке _**http://localhost:8888**_ и наблюдайте результат запроса в командной строке
