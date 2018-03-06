@@ -44,13 +44,17 @@ http.createServer( function(request, response) {
         });
     response.end();
     var i = 0;
+    var t;
     if(count !== undefined && speed !== undefined && time !== undefined) {
         count = count[0].v;
 
         while(i < count) {
-            console.log("PAUSE TIME " + (i+1) );
-            console.log(time[i].begin_date);
-            console.log(time[i].end_date);
+            console.log("PAUSE TIME " + (i+1) + " (IN MINUTES)" );
+            t = new Date(time[i].begin_date);
+            console.log(t.getHours()*60 + t.getMinutes());
+            t = new Date(time[i].end_date);
+            console.log(t.getHours()*60 + t.getMinutes());
+            // добавить обработку случая, когда end_date < begin_date
             i++;
         }
         speed = speed[0].value;
@@ -59,6 +63,4 @@ http.createServer( function(request, response) {
         console.log("TODAY'S PRODUCTIVITY: " + productivity);
     }
 
-
-    // parse time to minutes
 }).listen(8888);
