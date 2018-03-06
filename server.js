@@ -1,11 +1,13 @@
 
 var pgp = require("pg-promise")(/*options*/);
-var db = pgp("postgres://client:qwerty@localhost:5432/project");
-var http = require("http");
+var db = pgp("postgres://postgres:123@localhost:8080/project");
+var express = require('express');
+var app = express();
 
-http.createServer( function(request, response) {
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    db.one("SELECT * from users")
+app.get('/', function(req, res) {
+    res.sendfile('index.html');
+});
+    db.one("SELECT * from equips")
         .then(function (data) {
             //response.write(data);
             console.log(JSON.stringify(data));
@@ -14,6 +16,4 @@ http.createServer( function(request, response) {
             //response.write("ERROR");
             console.log("ERROR:", error);
         });
-
-    response.end();
-}).listen(8888);
+app.listen(8080);
