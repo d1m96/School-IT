@@ -13,7 +13,34 @@
 <div class="container">
     <canvas id="line-chart"></canvas>
 </div>
+<div>
+    <textarea name='Status'> </textarea>
+    <input type='button' onclick='UpdateStatus()' value='Status Update'>
+</div>
 
+<script>
+    function UpdateStatus(Status)
+    {
+        var Status = $(this).val();
+
+        $(function()
+        {
+            $.ajax({
+                type: "GET",
+                url: "/server.js",
+                data: {"username":"d1m"},
+                dataType: "json",
+                contentType: "application/json",
+                success: function(data){
+                    alert(data);
+                },
+            });
+
+        });
+    }
+
+
+</script>
 <script>
     var chart = document.getElementById('line-chart').getContext('2d');
 
@@ -46,20 +73,6 @@
     });
 </script>
 
-<script>
-    $.ajax({
-        type:"GET",
-        url:"",
-        dataType:"json",
-        data:"",
-        error:function () {
-            alert("error");
-        },
-        success:function ( data ) {
-            
-        }
-    })
-</script>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
