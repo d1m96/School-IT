@@ -18,9 +18,8 @@ _**НАСТРОЙКА СЕРВЕРА**_
 3) Установить **nodejs** и модули для него: <br>
 Нажмите _**Win+R**_, введите **cmd**. Откроется командная строка, перейдите в папку с проектом и введите: <br><br>
 **`~\School-IT> npm install nodejs -g`** <br>
-**`~\School-IT> npm install http --save`** <br>
 **`~\School-IT> npm install pg-promise --save`** <br>
-**`~\School-IT> npm install json --save`** <br>
+**`~\School-IT> npm install body-parser --save`** <br>
 4) В том же окне вводите: <br>
 **`~\School-IT> node server.js`** <br>
 После этого откройте браузер и введите в адресной строке _**http://localhost:8888**_ и наблюдайте результат запроса в командной строке
