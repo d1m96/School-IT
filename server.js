@@ -64,13 +64,20 @@ http.createServer( function(request, response) {
 
         response.end(json);
 
+        var begin_in_minutes = 0;
+        var end_in_minutes = 0;
+
         while(i < count) {
             console.log("PAUSE TIME " + (i+1) + " (IN MINUTES)" );
             t = new Date(time[i].begin_date);
-            console.log(t.getHours()*60 + t.getMinutes());
+            begin_in_minutes = t.getHours()*60 + t.getMinutes();
+            console.log(begin_in_minutes);
             t = new Date(time[i].end_date);
-            console.log(t.getHours()*60 + t.getMinutes());
-            // добавить обработку случая, когда end_date < begin_date
+            end_in_minutes = t.getHours()*60 + t.getMinutes();
+            if(end_in_minutes < begin_in_minutes) {     // если end_time на следующий день
+              end_in_minutes += 24*60;
+            }
+            console.log(end_in_minutes);
             i++;
         }
 
