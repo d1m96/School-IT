@@ -228,7 +228,14 @@ http.createServer( function(request, response) {
 
         response.end(json);
 
+<<<<<<< HEAD
        while(i < count) {
+=======
+        var begin_in_minutes = 0;
+        var end_in_minutes = 0;
+
+        while(i < count) {
+>>>>>>> 7c0493f1f8f7bdbddbee344e7d10301a5906ca3d
             console.log("PAUSE TIME " + (i+1) + " (IN MINUTES)" );
             t = new Date(time[i].begin_date);
             begin_in_minutes = t.getHours()*60 + t.getMinutes();
@@ -249,6 +256,7 @@ http.createServer( function(request, response) {
 
 
 
+<<<<<<< HEAD
 });//.listen(8888);
 console.log('listening on port 8888...');
 */
