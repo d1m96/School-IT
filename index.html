@@ -13,34 +13,39 @@
 <div class="container">
     <canvas id="line-chart"></canvas>
 </div>
-<div>
-    <textarea name='Status'> </textarea>
-    <input type='button' onclick='UpdateStatus()' value='Status Update'>
-</div>
+<div id="data"><input type="button" value="Обновить" onclick="update()" /></div>
 
 <script>
-    function UpdateStatus(Status)
-    {
-        var Status = $(this).val();
 
-        $(function()
-        {
-            $.ajax({
-                type: "GET",
-                url: "/server.js",
-                data: {"username":"d1m"},
-                dataType: "json",
-                contentType: "application/json",
-                success: function(data){
-                    alert(data);
-                },
-            });
+    var update_div = document.getElementById("data");
 
+    function update(){
+
+        data.innerHTML = '<input type="button" value="Обновить" onclick="update()" />';
+        $.ajax({
+            type: "GET",
+            url: "/",
+            data: "",
+            dataType: "text",
+            contentType: "text/plain",
+            success: function load(result) {
+                data.innerHTML = result + data.innerHTML;
+            },
+            error: function (result) {
+                data.innerHTML = 'Error ' + data.innerHTML;
+            }
         });
+
     }
 
+    function cancel(){
+
+        data.innerHTML = '<input type="button" value="Обновить" onclick="update()" />';
+
+    }
 
 </script>
+
 <script>
     var chart = document.getElementById('line-chart').getContext('2d');
 

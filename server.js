@@ -26,9 +26,11 @@ var app = express();
 
 
 app.get("/*", function (request, response) {
+    response.writeHead(200, {"Content-Type": "text/html; charset=utf8"});
     if(!request.query) return response.sendStatus(400);
     else {
-        console.log(JSON.stringify(request.query));
+        //console.log(JSON.stringify(request.query));
+        //response.write(JSON.stringify(request.query));
 
         db.many("select begin_date, end_date\n" +
             "from work_calendars\n" +
@@ -81,7 +83,7 @@ app.get("/*", function (request, response) {
         }
 
         //console.log(req.query);
-        response.write('<b>My</b> first express http server' + JSON.stringify(json));
+        response.write(JSON.stringify(json));
 
         var index = fs.readFileSync('./index.html');
         response.end(index);
