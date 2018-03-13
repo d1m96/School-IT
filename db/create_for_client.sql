@@ -34,5 +34,5 @@ create table if not exists param_values(
 	param_value_id serial primary key,
 	param_id int,
 	value text,
-	time text,
+	timestamp text,
 	foreign key (param_id) references params (param_id));
