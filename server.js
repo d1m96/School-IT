@@ -79,7 +79,7 @@ app.get("/*", function (request, response) {
             json.productivity = productivity;
             json.datetime = time;
 
-            //console.log(JSON.stringify(json));
+            console.log(JSON.stringify(json));
         }
 
         //console.log(req.query);
